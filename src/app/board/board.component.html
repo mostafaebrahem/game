@@ -1,0 +1,20 @@
+<div class="container d-flex flex-column align-items-center ">
+    <h1  class="text-center my-3 fw-bold text-danger">X-O simple Game </h1>
+    <h2 *ngIf="Player=='X'"  class="my-1">Current player is : <span class="text-danger">{{Player}}</span> </h2>
+    <h2 *ngIf="Player=='O'" class="my-1">Current player is : <span class="text-warning">{{Player}}</span> </h2>
+    <button class="btn btn-danger m-3 " (click)="newGame()">New game</button>
+    <h2 class="mb-3" *ngIf="winner=='O'">
+      Player <span class="text-warning">{{winner}}</span>  is the winner !!
+    </h2>
+    <h2 class="mb-3" *ngIf="winner=='X'">
+      Player <span class="text-danger">{{winner}}</span>  is the winner !!
+    </h2>
+    <main class="">
+        <app-square
+        *ngFor="let val of square,let i =index"
+        [value]="val"
+        (click)="makeMove(i)"
+        ></app-square>
+    </main>
+
+</div>
