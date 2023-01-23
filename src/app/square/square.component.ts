@@ -4,14 +4,15 @@ import { Component, OnInit ,Input} from '@angular/core';
   selector: 'app-square',
   // templateUrl: './square.component.html',
   template:`
-    <button class="bg-dark" *ngIf="value==null">{{value}}</button>
-    <button class="btn btn-danger" *ngIf="value=='X'">{{value}}</button>
-    <button class="btn btn-warning" *ngIf="value=='O'">{{value}}</button>
+    <button class="bg-light" *ngIf="value=='..'">{{value}}</button>
+    <button class="bg-light" *ngIf="value==null">{{value}}</button>
+    <button class="btn btn-danger" *ngIf="value=='Player1'">{{value}}</button>
+    <button class="btn btn-warning" *ngIf="value=='Player2'">{{value}}</button>
   `,
   styleUrls: ['./square.component.scss']
 })
 export class SquareComponent implements OnInit {
-@Input() value !:'X'|'O';
+@Input() value !:'Player1'|'Player2'|'..';
 
   constructor() { }
 
