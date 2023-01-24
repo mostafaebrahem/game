@@ -1,6 +1,9 @@
 *{
     text-align: center;
-    
+
+}
+.head{
+  color: #fd9843;
 }
 
 main{
@@ -12,4 +15,11 @@ app-square
 {
     border: 1px gray solid;
     height: 150px;
+}
+.main-font{
+  font-family: 'Josefin Sans', sans-serif;
+}
+.sec-font{
+  font-family: 'Kavoon', cursive;
+  letter-spacing: 3px;
 }

@@ -1,9 +1,9 @@
-<div class="container d-flex flex-column align-items-center ">
-    <h1  class="text-center my-3 fw-bold text-danger">X-O simple Game </h1>
-    <h2 *ngIf="Player=='Player1'"  class="my-1 ">Current player is : <span class="text-danger">{{Player}}</span> </h2>
-    <h2 *ngIf="Player=='Player2'" class="my-1">Current player is : <span class="text-warning">{{Player}}</span> </h2>
-    <button class="btn btn-danger m-3 " (click)="newGame()">New game</button>
-    <h2 class="mb-3" *ngIf="winner=='Player2'">
+<div class=" d-flex flex-column align-items-center main-font  m-auto">
+    <h1  class="text-center my-3 fw-bold  head">X-O simple Game </h1>
+    <h2 *ngIf="Player=='Player1'"  class="my-1 ">Current player is : <span class="text-danger badge sec-font fw-light">{{Player}}</span> </h2>
+    <h2 *ngIf="Player=='Player2'" class="my-1">Current player is : <span class="text-warning badge sec-font fw-light">{{Player}}</span> </h2>
+    <button class="btn btn-danger m-3 px-4 py-2 " (click)="newGame()">New game</button>
+    <h2 class="mb-3 " *ngIf="winner=='Player2'">
        <span class="text-warning">{{winner}}</span>  is the winner !!
     </h2>
     <div class="mb-3" *ngIf="winner=='Player1'">
@@ -12,8 +12,9 @@
           <iframe src="https://giphy.com/embed/3kD720zFVu22rfIA0s" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p></p>
       </div>
     </div>
-    <main class="">
+    <main class=" ">
         <app-square
+        class="sec-font"
         *ngFor="let val of square,let i =index"
         [value]="val"
         (click)="makeMove(i)"
