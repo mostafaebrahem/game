@@ -6,9 +6,12 @@
     <h2 class="mb-3" *ngIf="winner=='Player2'">
        <span class="text-warning">{{winner}}</span>  is the winner !!
     </h2>
-    <h2 class="mb-3" *ngIf="winner=='Player1'">
-       <span class="text-danger">{{winner}}</span>  is the winner !!
-    </h2>
+    <div class="mb-3" *ngIf="winner=='Player1'">
+       <h2><span class="text-danger my-2">{{winner}}</span>  is the winner !! </h2>
+       <div class="w-75  ">
+          <iframe src="https://giphy.com/embed/3kD720zFVu22rfIA0s" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p></p>
+      </div>
+    </div>
     <main class="">
         <app-square
         *ngFor="let val of square,let i =index"
@@ -18,3 +21,4 @@
     </main>
 
 </div>
+

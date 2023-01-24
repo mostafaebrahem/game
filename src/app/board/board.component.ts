@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WinnerService } from './../winner.service';
 
 @Component({
   selector: 'app-board',
@@ -12,7 +13,13 @@ export class BoardComponent implements OnInit {
   winner!: string;
   isChange: boolean = false;
   gameEnded:string='';
-  constructor() {}
+  winnerGIF:any[]=[];
+  random:number;
+  constructor(private _WinnerService:WinnerService) {
+    this.winnerGIF= this._WinnerService.gif;
+    this.random=Math.floor(Math.random()*this.winnerGIF.length)
+
+  }
 
   ngOnInit(): void {
     this.newGame();
