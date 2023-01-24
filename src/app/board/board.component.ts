@@ -29,7 +29,8 @@ export class BoardComponent implements OnInit {
   }
   makeMove(index: number) {
     if(!this.gameEnded){
-      if (this.counter < 6 && !this.isChange) {
+      if (this.counter < 6) {
+        //first 6 times
         if (!this.square[index]) {
           this.square.splice(index, 1, this.Player);
           this.xIsNext = !this.xIsNext;
@@ -37,27 +38,22 @@ export class BoardComponent implements OnInit {
         }
         console.log(this.counter);
       } else if(this.counter>=6 ) {
-        //this.isChange==true
-        if (!this.isChange) {
+        if (this.isChange==false) {
+          // counter>=6 & this.isChange==false
           if (this.square[index] == this.Player) {
-            this.square[index] = '..';
+            this.square.splice(index, 1, null);
             this.xIsNext = this.xIsNext;
             this.isChange = true;
           }
-        }else if(this.isChange){
-          // if (this.square[index] == this.Player) {
-          //   this.square[index] = '..';
-          //   this.xIsNext = this.xIsNext;
-          //   this.isChange = true;
-          // }
-          if (this.square[index] == null || this.square[index] == '..') {
+        }else if(this.isChange==true){
+          // counter>=6 & this.isChange==true
+          if (this.square[index] == null ) {
             this.square.splice(index, 1, this.Player);
             this.xIsNext = !this.xIsNext;
             this.counter++;
             this.isChange = false;
+            console.log('test')
           }
-
-
         }
         console.log(this.counter);
       }
